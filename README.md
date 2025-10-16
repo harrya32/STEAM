@@ -106,3 +106,14 @@ After generating the CGM data, compare with real data via our metrics:
 conda activate steam
 python get_cgm_results.py
 ```
+
+## Citation
+```bibtex
+@inproceedings{
+  amad2025improving,
+  title={Improving the generation and evaluation of synthetic data for downstream medical causal inference},
+  author={Harry Amad and Zhaozhi Qian and Dennis Frauen and Julianna Piskorz and Stefan Feuerriegel and Mihaela van der Schaar},
+  booktitle={The 39th Conference on Neural Information Processing Systems},
+  year={2025}
+}
+```
