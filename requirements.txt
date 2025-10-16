@@ -1,0 +1,11 @@
+torch==2.2.2
+synthcity[all]==0.2.11
+scikit-learn==1.7.2
+scipy==1.15.3
+numpy==1.26.4
+pandas==2.3.3
+captum==0.7.0
+catenets==0.2.4
+matplotlib==3.10.6
+opacus==1.4.1
+diffprivlib==0.6.4
