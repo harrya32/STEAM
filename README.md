@@ -18,11 +18,7 @@ steam/
 │   ├── generation.py             # Generic and STEAM synthetic data generation methods
 │   └── catenets_dp/              # Differentially private PO estimators
 ├── exps/                         # Experimental scripts
-│   ├── simulated_generic_comparisons.py
-│   ├── real_generic_comparisons.py
-│   ├── existing_metric_failures.py
-│   ├── hyperparameter_stability.py
-│   ├── ablation.py
+├── ...
 │   └── cgms/                     # CGMs experiments
 ├── data/                         # Data loading and preprocessing
 ├──results/                       # Results from experiments
@@ -44,16 +40,12 @@ conda activate steam
 2. Install dependencies:
 ```bash
 pip install -r requirements.txt
-```
-
-3. Install the package:
-```bash
 pip install .
 ```
 
 ### Setup for CGM generation
 
-For the CGM-specific experiments, use the dedicated requirements file:
+For the CGM-specific experiments, create a separate environment, using the dedicated requirements file:
 
 ```bash
 conda create -n steam_cgm python=3.10
@@ -67,6 +59,7 @@ pip install .
 Before running experiments, prepare the data:
 
 ```bash
+conda activate steam
 cd data
 python load_data.py
 cd ..
@@ -74,13 +67,13 @@ cd ..
 
 ## Running experiments
 
-### Standard experiments
+### Metric evaluation and generic generative model comparisons
 
 Navigate to the experiments folder and run the desired experiment script:
 
 ```bash
 cd exps
-python metric_exp.py       # Existing metric analysis
+python metric_exp.py       # Existing and our metric analysis
 python real_generic_exp.py       # Real data generic v STEAM
 python simulated_generic_exp.py  # Simulated data generic v STEAM
 python hyperparameter_exp.py       # Stability analysis
@@ -94,6 +87,7 @@ By default, the experiments will run for all model/data/iterations combinations 
 For CGM-specific experiments, generate the data with:
 
 ```bash
+conda activate steam_cgm
 cd exps/cgms
 python causal_generation.py
 cd ..
